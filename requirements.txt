@@ -1,0 +1,12 @@
+ipython
+jupyter
+torch
+torchvision
+scipy
+scikit-learn
+joblib
+transformers
+pandas
+tensorboard
+tqdm
+seaborn
