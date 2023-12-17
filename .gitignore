@@ -16,9 +16,13 @@ __pycache__/
 
 #large persisted files
 src/data/*/*
-*/.DS_Store
-*/*/.DS_Store
-*.DS_Store
+
+#ipynb notebook 
+*.ipynb
+
+#misc files
+**/.DS_Store
+**/.Trash-0
 
 # Distribution / packaging
 .Python
