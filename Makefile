@@ -13,8 +13,13 @@ build:
 	docker build -t $(IMAGE_NAME) .
 
 # Run the Docker container with Jupyter Notebook and persist the data
-run:
+bash:
 	docker run --rm -p 8888:8888 -v "$(HOST_DATA_DIR):$(CONTAINER_DATA_DIR)" -it --name $(CONTAINER_NAME) media-ots-image  bash
+
+# Start the Jupyter Notebook server
+jupyter:
+	docker run --rm -p 8888:8888 -v "$(HOST_DATA_DIR):$(CONTAINER_DATA_DIR)" -it --name $(CONTAINER_NAME) media-ots-image jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+
 
 # Remove the Docker container (if it exists) and image
 clean:
