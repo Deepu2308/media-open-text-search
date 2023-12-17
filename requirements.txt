@@ -6,6 +6,8 @@ scipy
 scikit-learn
 joblib
 transformers
+datasets
+accelerate
 pandas
 tensorboard
 tqdm
