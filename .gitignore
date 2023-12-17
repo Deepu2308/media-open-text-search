@@ -14,6 +14,12 @@ __pycache__/
 *.svg
 *.webp
 
+#large persisted files
+src/data/*/*
+*/.DS_Store
+*/*/.DS_Store
+*.DS_Store
+
 # Distribution / packaging
 .Python
 build/

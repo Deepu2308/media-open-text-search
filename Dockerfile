@@ -4,7 +4,6 @@ FROM python:3.11-slim
 WORKDIR /src
 
 # Copy the requirements.txt file and install the required packages
-COPY requirements.txt requirements.txt
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     build-essential \
@@ -18,11 +17,8 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy the source files and the entrypoint script
 COPY src/ /src/
 
-# Make the entrypoint script executable
-RUN chmod +x /src/entrypoint.sh
+#store hf models in this persisted space
+ENV TRANSFORMERS_CACHE=/src/data/model-cache/
 
 # Expose the Jupyter Notebook port
 EXPOSE 8888
-
-# Run the entrypoint script
-CMD ["/src/entrypoint.sh"]
