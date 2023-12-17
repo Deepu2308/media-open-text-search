@@ -20,10 +20,9 @@ src/data/*/*
 #ipynb notebook 
 *.ipynb
 
-#mac view files
-*/.DS_Store
-*/*/.DS_Store
-*.DS_Store
+#misc files
+**/.DS_Store
+**/.Trash-0
 
 # Distribution / packaging
 .Python
