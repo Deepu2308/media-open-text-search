@@ -16,6 +16,11 @@ __pycache__/
 
 #large persisted files
 src/data/*/*
+
+#ipynb notebook 
+*.ipynb
+
+#mac view files
 */.DS_Store
 */*/.DS_Store
 *.DS_Store
