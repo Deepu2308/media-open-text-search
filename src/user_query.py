@@ -30,13 +30,16 @@ def image_finder(user_query: str):
     """
 
     print("Finding meme for query: ", user_query)
-    scores = np.matmul(featurize_query(user_query), image_features.T)
-    best_match = np.argmax(scores)
 
-    image = image_dataset["train"]["image"][best_match]
+    user_query = featurize_query(user_query)
 
-    # Example: Resize the image to 300x300 pixels
+    _, matches = image_dataset["train"].get_nearest_examples(
+        "features", user_query, k=1
+    )
+
+    best_match = matches["image"][0]
+
     new_size = (300, 300)
-    resized_img = image.resize(new_size)
+    resized_img = best_match.resize(new_size)
 
     return resized_img
