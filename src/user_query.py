@@ -24,7 +24,7 @@ def featurize_query(q: str):
     return text_features.detach().numpy()
 
 
-def image_finder(user_query: str):
+def image_finder(user_query: str, n: int = 1):
     """
     This function takes a query and returns the best matching image.
     """
@@ -33,13 +33,13 @@ def image_finder(user_query: str):
 
     user_query = featurize_query(user_query)
 
-    _, matches = image_dataset["train"].get_nearest_examples(
-        "features", user_query, k=1
+    scores, matches = image_dataset["train"].get_nearest_examples(
+        "features", user_query, k=n
     )
 
-    best_match = matches["image"][0]
+    matches = matches["image"]
+    if n == 1:
+        return matches[0].resize((300, 300))
 
-    new_size = (300, 300)
-    resized_img = best_match.resize(new_size)
-
-    return resized_img
+    else:
+        return scores, matches
