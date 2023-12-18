@@ -8,6 +8,7 @@ joblib
 transformers
 datasets
 accelerate
+faiss-cpu
 pandas
 tensorboard
 tqdm

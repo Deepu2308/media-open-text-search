@@ -24,19 +24,18 @@ def featurize_query(q: str):
     return text_features.detach().numpy()
 
 
-def image_finder(user_query: str):
+def image_finder(user_query: str, n: int = 1):
     """
     This function takes a query and returns the best matching image.
     """
 
     print("Finding meme for query: ", user_query)
-    scores = np.matmul(featurize_query(user_query), image_features.T)
-    best_match = np.argmax(scores)
 
-    image = image_dataset["train"]["image"][best_match]
+    user_query = featurize_query(user_query)
 
-    # Example: Resize the image to 300x300 pixels
-    new_size = (300, 300)
-    resized_img = image.resize(new_size)
+    scores, matches = image_dataset["train"].get_nearest_examples(
+        "features", user_query, k=n
+    )
 
-    return resized_img
+    matches = matches["image"]
+    return scores, matches

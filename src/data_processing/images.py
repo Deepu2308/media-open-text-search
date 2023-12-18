@@ -3,7 +3,7 @@
 This module contains functions to load and process images.
 """
 
-
+import faiss
 import torch
 from datasets import load_dataset
 
@@ -45,6 +45,10 @@ def get_image_dataset(folder="samples"):
     print("extract image features")
     image_dataset = image_dataset.map(
         extract_image_features, batched=True, batch_size=4
+    )
+
+    image_dataset["train"].add_faiss_index(
+        column="features", metric_type=faiss.METRIC_INNER_PRODUCT
     )
 
     return image_dataset
