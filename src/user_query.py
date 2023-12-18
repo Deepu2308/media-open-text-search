@@ -38,8 +38,4 @@ def image_finder(user_query: str, n: int = 1):
     )
 
     matches = matches["image"]
-    if n == 1:
-        return matches[0].resize((300, 300))
-
-    else:
-        return scores, matches
+    return scores, matches
