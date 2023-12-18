@@ -1,9 +1,10 @@
-import matplotlib.pyplot as plt
-from PIL import Image
-import numpy as np
+# coding=utf-8
+"""
+This module contains helper functions.
+"""
 
-# Assuming you have a list of 6 PIL JpegImageFile objects named 'images'
-# images = [image1, image2, image3, image4, image5, image6]
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def plot_image_matches(images, scores):
@@ -11,7 +12,7 @@ def plot_image_matches(images, scores):
     This function takes a list of PIL images and their corresponding scores and plots them.
     """
     # Create a figure and a set of subplots
-    fig, axs = plt.subplots(
+    _, axs = plt.subplots(
         2, round(len(images) / 2 + 0.1), figsize=(15, 10)
     )  # Adjust the figsize as needed
 
