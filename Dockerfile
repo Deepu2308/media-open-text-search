@@ -18,7 +18,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY src/ /src/
 
 #store hf models in this persisted space
-ENV TRANSFORMERS_CACHE=/src/data/model-cache/
+ENV HF_HOME=/src/data/model-cache/
 
 # Expose the Jupyter Notebook port
 EXPOSE 8888
