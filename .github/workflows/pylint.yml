@@ -13,7 +13,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: /tmp/.buildx-cache
-        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        key: ${{ runner.os }}-buildx-${{ hashFiles('Dockerfile', 'requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-buildx-
 
@@ -36,5 +36,8 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
+    - name: List Docker images
+      run: docker images
+      
     - name: Run Pylint
       run: docker run --rm -v $PWD:/src ci-media-ots:latest pylint $(git ls-files '*.py')
