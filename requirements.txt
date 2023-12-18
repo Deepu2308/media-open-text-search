@@ -12,3 +12,6 @@ pandas
 tensorboard
 tqdm
 seaborn
+pylint
+black
+isort
