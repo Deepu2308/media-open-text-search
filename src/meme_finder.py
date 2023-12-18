@@ -1,10 +1,7 @@
-from PIL import Image
-import torch
 import numpy as np
-from transformers import CLIPProcessor, CLIPModel, AutoTokenizer
-
+import torch
 from datasets import load_dataset
-import io
+from transformers import AutoTokenizer, CLIPModel, CLIPProcessor
 
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
 processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
