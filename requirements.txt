@@ -9,6 +9,7 @@ transformers
 datasets
 accelerate
 faiss-cpu
+gradio
 pandas
 tensorboard
 tqdm
