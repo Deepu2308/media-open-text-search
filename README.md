@@ -1,5 +1,5 @@
-# Meme finder
-Open text meme search
+# Media finder
+Open text media search
 
 
 # Setup
@@ -8,7 +8,11 @@ Clone repo, cd into it and run
 make build
 ```
 
-
+# Interface
+Start a UI to search for media in repo
+```
+make interface
+```
 
 # Start Jupyter notebook
 ```
