@@ -1,10 +1,18 @@
+# coding: utf-8
+"""
+This module starts an interface to search for images.
+"""
+
 import gradio as gr
 from user_query import (
     image_finder,
 )  # Assuming image_finder is the function you mentioned
 
 
-def search_images(query):
+def search_images(query: str):
+    """
+    This function takes a query and returns the best matching images.
+    """
     # Call your image_finder function from user_query
     _, image_objects = image_finder(query, n=5)
 
