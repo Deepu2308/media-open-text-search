@@ -14,7 +14,7 @@ def search_images(query: str):
     This function takes a query and returns the best matching images.
     """
     # Call your image_finder function from user_query
-    _, image_objects = image_finder(query, n=5)
+    _, image_objects = image_finder(query, n=15)
 
     # Assuming image_finder now returns a list of PIL.Image objects
     return image_objects
@@ -32,6 +32,16 @@ iface = gr.Interface(
         gr.Image(label="Result 3"),
         gr.Image(label="Result 4"),
         gr.Image(label="Result 5"),
+        gr.Image(label="Result 6"),
+        gr.Image(label="Result 7"),
+        gr.Image(label="Result 8"),
+        gr.Image(label="Result 9"),
+        gr.Image(label="Result 10"),
+        gr.Image(label="Result 11"),
+        gr.Image(label="Result 12"),
+        gr.Image(label="Result 13"),
+        gr.Image(label="Result 14"),
+        gr.Image(label="Result 15"),
     ],  # output type and properties
     title="Image Search",
     description="Enter a query to search for images.",
