@@ -25,3 +25,7 @@ make run
 https://drive.google.com/drive/folders/1UXKquhbrh_aC48FeqY60TW6YXls9gAMD
 
 Place data in project/data/sample
+# Example
+<img src="src/data/examples/example1.png">
+<img src="src/data/examples/example3.png">
+<img src="src/data/examples/example4.png">
