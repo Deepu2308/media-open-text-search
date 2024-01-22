@@ -16,7 +16,7 @@ Start a UI to search for media in repo
 make interface
 ```
 
-# Start Jupyter notebook
+# Debug/Dev with Jupyter notebook
 ```
 make run
 ```
